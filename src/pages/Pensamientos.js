@@ -1,6 +1,6 @@
 
 import React, { useState } from "react";
-
+import { useTheme } from './context/ThemeContext';
 
 export const escritos = [
   {
@@ -69,6 +69,7 @@ export const escritos = [
 
 function Pensamientos() {
 
+  const { theme } = useTheme();
   const [expanded, setExpanded] = useState({});
 
   const toggleExpand = (id) => {
@@ -82,7 +83,7 @@ function Pensamientos() {
       <div className="row g-3 justify-content-center">
         {escritos.map((pensamientos) => (
           <div className="col-12 col-md-6 d-flex" key={pensamientos.id}>
-            <div className="card pensamiento-card text-white bg-dark flex-fill d-flex flex-column" style={{ maxHeight: expanded[pensamientos.id] ? "none" : "200px", overflow: "hidden" }}>
+            <div className=`card pensamiento-card text-white bg-dark flex-fill d-flex flex-column` style={{ maxHeight: expanded[pensamientos.id] ? "none" : "200px", overflow: "hidden" }}>
             <div className="card-body d-flex flex-column" >
                 <h5 className="card-title ">{pensamientos.title}</h5>
                 <p className="card-text">

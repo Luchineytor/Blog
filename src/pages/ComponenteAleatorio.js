@@ -12,6 +12,7 @@ const shuffleArray = (array) => {
 
 function PensamientoAleatorio() {
   const [randomEscrito, setRandomEscrito] = useState(shuffleArray(escritos)[0]);
+  
 
   useEffect(() => {
     const interval = setInterval(() => {
@@ -23,13 +24,12 @@ function PensamientoAleatorio() {
 
   return (
     <div
-      className="card text-white bg-dark d-flex flex-column justify-content-center align-items-center"
+      className={`card d-flex flex-column justify-content-center align-items-center`}
       style={{
         backgroundSize: 'cover',
         backgroundPosition: 'center',
         minHeight: '40vh'
-      }}
-    >
+      }}>
       <div className="card-body d-flex flex-column justify-content-between w-100">
         {/* Título alineado a la izquierda en la parte superior */}
         <h5 className="card-title text-start">{randomEscrito.title}</h5>

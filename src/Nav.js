@@ -1,8 +1,11 @@
 import { Link } from "react-router-dom";
+import { useTheme } from './context/ThemeContext';
 
 function Nav() {
+     const { theme, toggleTheme } = useTheme();
+
     return (
-        <nav className="navbar navbar-expand-lg navbar-dark bg-dark sticky-top">
+        <nav className={`navbar navbar-expand-lg ${theme === 'dark' ? 'navbar-dark bg-dark' : 'navbar-light bg-light'} sticky-top`}>
       <div className="container">
         <Link className="navbar-brand" to="/">La Chica de la Ventana </Link>
 
@@ -20,6 +23,11 @@ function Nav() {
             </li>
             <li className="nav-item">
               <Link className="nav-link" to="/contact">Yo</Link>
+            </li>
+            <li className="nav-item">
+              <button className="btn btn-outline-secondary ms-2" onClick={toggleTheme}>
+                {theme === 'dark' ? '☀️ Claro' : '🌙 Oscuro'}
+              </button>
             </li>
           </ul>
         </div>

@@ -1,6 +1,6 @@
 
 import React, { useState } from "react";
-import { useTheme } from './context/ThemeContext';
+import { useTheme } from '../context/ThemeContext';
 
 export const escritos = [
   {
@@ -33,7 +33,8 @@ export const escritos = [
     de q somos tan simples como eso pero podemos llegar a ser gigantes, ahora 
     cada vez q recuerdes un porcentaje recordarás que muchas cosas pueden ser 
     reversibles y que`,
-     <b key='b'>tú y yo somos una de ellas.</b>],
+    <br key="br"/>,
+    <b key='b'>tú y yo somos una de ellas.</b>],
   },
   {
     id : 2,
@@ -64,6 +65,51 @@ export const escritos = [
       <b key="b">La chica de la ventana,</b>
     ],
   },
+  {
+    id : 3,
+    tittle: "Despedida",
+    summary: [`No decidiste volver a escribirme, me imagino que algo en ti sigue buscándome.
+      No sé si es costumbre, culpa, cariño, o curiosidad… pero yo sí sé desde dónde 
+      te hablo`],
+    content: [`
+      No decidiste volver a escribirme, me imagino que algo en ti sigue buscándome.
+      No sé si es costumbre, culpa, cariño, o curiosidad… pero yo sí sé desde dónde 
+      te hablo: desde un lugar donde el amor no fue suficiente para que te quedaras,
+      ni para que fueras claro.`,
+      <br key="br"/>,
+      `No sabes cuántas veces me pregunté qué hice mal,
+      si dije algo que no debía, si te presioné sin querer, 
+      o si te alejé por solo querer saber de ti. Me hiciste 
+      sentir que pedir un “sí” o un “no” era demasiado, 
+      que querer hablar era molestar, que ser leal y estar ahí no valía nada.`,
+      <br key="br"/>,
+      `Y aún así, te esperé. Te hablé bonito. 
+      Te cuidé a la distancia. Me preocupé cuando 
+      nadie más sabía de ti. Y me callé muchas veces 
+      por miedo a perderte. Pero igual te fuiste. 
+      O peor: te fuiste sin irte. Me bloqueaste, me borraste, me congelaste. 
+      Como si yo fuera el error, como si no hubiera amor del otro lado de la pantalla.`,
+      <br key="br"/>,
+      `No sé si vuelves para quedarte o solo para asegurarte de que aún estoy aquí. 
+      Pero esta vez no voy a correr hacia ti. No porque no te haya querido, 
+      sino porque me di cuenta de que yo también merezco que alguien se quede 
+      sin que tenga que rogarle que lo haga.`,
+      <br key="br"/>,
+      `Tú dijiste que no me merecías. Y quizá tenías razón. 
+      Porque quien no sabe amar con presencia, con honestidad y con valentía, 
+      no puede sostener a alguien que ama con el alma.`,
+      <br key="br"/>,
+      `No te guardo odio. Me doliste, sí. Pero también me enseñaste. 
+      A no conformarme con migajas. A no justificar ausencias. A no quedarme donde solo me quieren a ratos.`,
+      <br key="br"/>,
+      `Si algún día decides volver con el corazón en las manos, 
+      dispuesto a hablar, no a huir… tal vez podamos sanar desde otro lugar. Pero hoy, solo te digo esto:`,
+      <br key="br"/>,
+      `Me suelto. Porque el amor no duele así.`,
+      <br key="br"/>,
+      <b key="b">Y yo ya aprendí que merezco paz.</b>
+      ]
+  },
   
 ]
 
@@ -83,7 +129,7 @@ function Pensamientos() {
       <div className="row g-3 justify-content-center">
         {escritos.map((pensamientos) => (
           <div className="col-12 col-md-6 d-flex" key={pensamientos.id}>
-            <div className=`card pensamiento-card text-white bg-dark flex-fill d-flex flex-column` style={{ maxHeight: expanded[pensamientos.id] ? "none" : "200px", overflow: "hidden" }}>
+            <div className={`card pensamiento-card ${theme === 'dark'? "text-white bg-dark" : "text-dark bg-light" } flex-fill d-flex flex-column`} style={{ maxHeight: expanded[pensamientos.id] ? "none" : "200px", overflow: "hidden" }}>
             <div className="card-body d-flex flex-column" >
                 <h5 className="card-title ">{pensamientos.title}</h5>
                 <p className="card-text">

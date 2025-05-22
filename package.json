@@ -1,7 +1,7 @@
 {
   "name": "la_chica_de_la_ventana",
   "version": "0.1.0",
-  "homepage": "https://Luchineytor.github.io/Blog",
+  "homepage": "https://luchineytor.github.io/Blog", 
   "private": true,
   "dependencies": {
     "@testing-library/dom": "^10.4.0",
